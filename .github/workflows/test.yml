@@ -3,7 +3,7 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - main  # Adjust this branch name to match your main branch
+      - main  ## Adjust this branch name to match your main branch
 
 jobs:
   build:
