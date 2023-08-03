@@ -24,6 +24,11 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.stackoverflow...</groupId>
+            <artifactId>artifactId...</artifactId>
+            <version>1.0</version>
+        </dependency>
         
         <!-- Apache Commons Lang for utility classes -->
         <dependency>
