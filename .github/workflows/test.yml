@@ -19,22 +19,64 @@ jobs:
         with:
           java-version: 8  # Change this to your desired Java version
           distribution: 'zulu'
+      name: Java CI with Maven
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name to match your main branch
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 8  # Change this to your desired Java version
+          distribution: 'zulu'
+
+      - name: Build with Maven
+        run: |
+          mvn clean install
+          
+      - name: Add to cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Build with Maven
+        run: |
+          mvn clean package
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-java-project-artifact
+          path: target/*.jar 
 
       - name: Build with Maven
         run: |
           mvn clean install
 
-      - name: Add to cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-cache
+      # - name: Add to cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.m2
+      #     key: ${{ runner.os }}-cache-${{ hashFiles('**/pom.xml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-cache
 
       - name: Test cache
         run : |
-          cd $Home/.m2
+          cd ~/.m2
           ls -R
 
       - name: Build with Maven
