@@ -25,9 +25,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.stackoverflow...</groupId>
-            <artifactId>artifactId...</artifactId>
-            <version>1.0</version>
+            <groupId>stackoverflow</groupId>
+            <artifactId>lein-jdeb</artifactId>
+            <version>1.0.5</version>
         </dependency>
         
         <!-- Apache Commons Lang for utility classes -->
