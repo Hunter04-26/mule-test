@@ -57,11 +57,11 @@
         </dependency>
 
         <!-- Apache HttpClient for making HTTP requests -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
-        </dependency>
+        </dependency> -->
 
         <!-- MySQL JDBC driver for connecting to MySQL database -->
         <dependency>
@@ -186,11 +186,11 @@
         </dependency>
 
         <!-- 5. Apache HttpClient for making HTTP requests -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
-        </dependency>
+        </dependency> -->
     </dependencies>
 
     <!-- Build configuration -->
