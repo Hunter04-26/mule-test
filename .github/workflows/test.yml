@@ -32,6 +32,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache
 
+      - name: Test cache
+        run : |
+          cd $Home/.m2
+          ls -R
+
       - name: Build with Maven
         run: |
           mvn clean package
