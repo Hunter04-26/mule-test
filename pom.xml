@@ -25,9 +25,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>stackoverflow</groupId>
-            <artifactId>lein-jdeb</artifactId>
-            <version>1.0.5</version>
+            <groupId>xml-resolver</groupId>
+            <artifactId>xml-resolver</artifactId>
+            <version>1.2</version>
         </dependency>
         
         <!-- Apache Commons Lang for utility classes -->
