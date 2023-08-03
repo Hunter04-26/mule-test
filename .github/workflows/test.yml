@@ -25,7 +25,7 @@ jobs:
           mvn clean install
 
       - name: Add to cache
-      - uses: actions/cache@v2
+        uses: actions/cache@v2
         with:
           path: ~/.m2
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
