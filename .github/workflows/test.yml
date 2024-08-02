@@ -21,7 +21,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Install Git
-        uses: actions/setup-git@v4
+        uses: actions4git/setup-git@v1
         with:
           version: '2.24.1'
           
