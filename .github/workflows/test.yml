@@ -20,33 +20,33 @@ jobs:
           java-version: 8  # Change this to your desired Java version
           distribution: 'zulu'
 
-      - name: Install Git
-        uses: actions4git/setup-git@v1
+      - name: Git Version
+        uses: codacy/git-version@2.5.4
         with:
-          version: '2.24.1'
+          tool-version: 2.24.1
           
-      - name: Add to cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-cache
+      # - name: Add to cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.m2
+      #     key: ${{ runner.os }}-cache-${{ hashFiles('**/pom.xml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-cache
 
-      - name: Build with Maven
-        run: |
-          mvn clean install
+      # - name: Build with Maven
+      #   run: |
+      #     mvn clean install
       
-      - name: Test cache
-        run : |
-          cd ~/.m2
-          ls -R
-      - name: Build with Maven
-        run: |
-          mvn clean package
+      # - name: Test cache
+      #   run : |
+      #     cd ~/.m2
+      #     ls -R
+      # - name: Build with Maven
+      #   run: |
+      #     mvn clean package
       
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-java-project-artifact
-          path: target/*.jar 
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-java-project-artifact
+      #     path: target/*.jar 
